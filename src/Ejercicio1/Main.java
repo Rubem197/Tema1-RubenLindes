@@ -37,7 +37,13 @@ public class Main {
             // Si elige mostrar un directorio, debo pedirle tambien la ruta del directorio a
             // mostrar. Si lo deja vacio, debo mostrar el contenido del directorio actual
             case 3:
+                System.out.println("Introduce la ruta: ");
+                String ruta3 = sc.nextLine();
+                String[] comando3 = {"cmd", "/C", "dir", ruta3 };
 
+                ProcessBuilder pb = new ProcessBuilder(comando3);
+
+                pb.redirectOutput(ProcessBuilder.Redirect.INHERIT);
 
                 break;
             default:
